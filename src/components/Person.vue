@@ -19,24 +19,8 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Person",
-  beforeCreate() {
-    console.log("beforeCreate")
-  },
-  data(){
-    return{
-      a:100,
-      c:this.name // vue2里面能用vue3
-    }
-  },
-  methods:{
-    b(){
-      console.log("b")
-    }
 
-  },
   setup(){
-
-    console.log("setup")
     // 数据
     let name = "person";
     let age = 18;
