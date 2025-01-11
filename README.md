@@ -2134,6 +2134,11 @@ function sendToy(){
    <AtguiguInput v-model:abc="userName" v-model:xyz="password"/>
    ```
 
+6. $event到底是啥? 啥时候能.target
+
+对于原生事件,$event就是事件对象 -> 能.target
+
+对于自定义事件,$event就是触发事件时,所传递的数据 -> 不能.target
 
 
 

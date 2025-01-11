@@ -1,0 +1,28 @@
+import {defineStore} from "pinia";
+import axios from "axios";
+import {nanoid} from "nanoid";
+
+export const useTalkStore = defineStore('talk',{
+
+  actions: {
+    async getATalk() {
+      // 下面这行写法:连续解构赋值 + 重命名
+      const {data: {content: title}} = await axios.get("https://api.uomg.com/api/rand.qinghua?format=json");
+      const obj = {
+        id: nanoid(),
+        title
+      }
+      this.talkList.unshift(obj);
+    }
+  },
+
+  state(){
+    return {
+      talkList:[
+        {id:"asdfgh01",title:"hello world"},
+        {id:"asdfgh02",title:"hello C++"},
+        {id:"asdfgh03",title:"hello Java"}
+      ]
+    }
+  }
+})
